@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="magicItems.js"></script> 
+<script src="locations.js"></script> 
+<script src="npc.js"></script> 
+
+<link rel="stylesheet" href="css.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="sidenav">
+  <div>
+    <button class="dropdown-btn">Locations<i class="fa fa-caret-down"></i></button>
+    <div id="locations"class="dropdown-container ">
+      <script>
+        for(let i = 0; i<locations.length;i++){
+          var a = document.createElement("a");
+          a.innerHTML = locations[i].Name;
+          a.onclick = function () {open(locations[i]);};
+          document.getElementById("locations").appendChild(a);
+        }
+      </script>
+    </div>
+  </div>
+
+    <div>
+      <button class="dropdown-btn">Magic items<i class="fa fa-caret-down"></i></button>
+      <div id="magicItems"class="dropdown-container ">
+        <script>
+          for(let i = 0; i<magic_items.length;i++){
+            var a = document.createElement("a");
+            a.innerHTML = magic_items[i].Name;
+            a.onclick = function () {open(magic_items[i]);};
+            document.getElementById("magicItems").appendChild(a);
+          }
+        </script>
+      </div>
+    </div>
+
+    <div>
+      <button class="dropdown-btn">NPC<i class="fa fa-caret-down"></i></button>
+      <div id="npcs"class="dropdown-container ">
+        <script>
+          for(let i = 0; i<npcs.length;i++){
+            var a = document.createElement("a");
+            a.innerHTML = npcs[i].Name;
+            a.onclick = function () {open(npcs[i]);};
+            document.getElementById("npcs").appendChild(a);
+          }
+        </script>
+      </div>
+    </div>
+
+</div>
+
+<div id="main" class="main">
+
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+
+function open(item){
+  document.getElementById("npcs").style.display = "none";
+  document.getElementById("magicItems").style.display = "none";
+  document.getElementById("locations").style.display = "none";
+
+  var elem = document.getElementById("DISPLAY");
+  if(elem){
+    elem.remove();
+  }
+  var wrapper = document.createElement("div");
+
+  var propValue;
+  for(var propName in item){
+    if(propName!="Foto"){
+      propValue = item[propName];
+      console.log(propValue,propName);
+      
+      var element = document.createElement("div");
+      element.innerHTML = "<b>"+propName+" : </b>"+ propValue;
+      wrapper.appendChild(element);
+    }
+  }
+  if(item["Foto"]){
+    var img = document.createElement("img");
+    img.src = item["Foto"];
+    wrapper.appendChild(img);
+  }
+  wrapper.id = "DISPLAY";
+  document.getElementById("main").appendChild(wrapper);
+}
+
+</script>
+
+</body>
+</html> 
