@@ -12,7 +12,20 @@
 </head>
 <body>
 
-<div class="sidenav">
+  <div>
+    <button onclick="showNavbar()" style="width:50px;height:50px; background-color:red"><button>
+  </div>
+  <script>
+        function showNavbar(){
+          var nav = document.getElementById("navbar");
+          if(nav.style.display == "none"){
+            nav.style.display = "block";
+          }else{
+            nav.style.display = "none";
+          }
+        }
+      </script>
+<div class="sidenav" style="display:none" id="navbar">
   <div>
     <button class="dropdown-btn">Locations<i class="fa fa-caret-down"></i></button>
     <div id="locations"class="dropdown-container ">
