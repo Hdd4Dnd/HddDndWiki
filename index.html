@@ -42,18 +42,7 @@
     background-color: #d8ff00;margin: auto;"></div>
 </div><button>
     </div>  
-      
-  <script>
-        function showNavbar(){
-          var nav = document.getElementById("navbar");
-          if(nav.style.display == "none"){
-            nav.style.display = "block";
-          }else{
-            nav.style.display = "none";
-          }
-        }
-      </script>
-      
+
       
 <div class="sidenav" style="display:none" id="navbar">
   <div>
@@ -105,6 +94,16 @@
 </div>
 
 <script>
+        function showNavbar(){
+          var nav = document.getElementById("navbar");
+          if(nav.style.display == "none"){
+            nav.style.display = "block";
+          }else{
+            nav.style.display = "none";
+          }
+        }	
+	
+	
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
