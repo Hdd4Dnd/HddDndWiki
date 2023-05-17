@@ -13,8 +13,10 @@
 <body>
 
   <div>
-    <button onclick="showNavbar()" style="width:50px;height:50px; background-color:red"><button>
+    <button onclick="showNavbar()" style="width:50px;height:50px; background-color:red">a<button>
   </div>
+      
+      
   <script>
         function showNavbar(){
           var nav = document.getElementById("navbar");
@@ -25,6 +27,8 @@
           }
         }
       </script>
+      
+      
 <div class="sidenav" style="display:none" id="navbar">
   <div>
     <button class="dropdown-btn">Locations<i class="fa fa-caret-down"></i></button>
@@ -96,6 +100,7 @@ function open(item){
   document.getElementById("npcs").style.display = "none";
   document.getElementById("magicItems").style.display = "none";
   document.getElementById("locations").style.display = "none";
+  showNavbar();
 
   var elem = document.getElementById("DISPLAY");
   if(elem){
