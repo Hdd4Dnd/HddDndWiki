@@ -11,14 +11,15 @@
 
 </head>
 <body>
-<div>
-    <button onclick="showNavbar()" class="navButton">
-	    	<div class="menuButton">
-			<div></div>
-			<div style="margin-top: 0 !important;margin-bottom: 0 !important;"></div>
-			<div></div>
-		</div></button>
-    </div>  
+	<div>
+    		<button onclick="showNavbar()" class="navButton">
+	    		<div class="menuButton">
+				<div></div>
+				<div style="margin-top:0 !important; margin-bottom:0 !important;"></div>
+				<div></div>
+			</div>
+		</button>
+    	</div>  
 
       
 <div class="sidenav" style="display:none" id="navbar">
@@ -126,7 +127,6 @@ function open(item){
 	  imgDiv.className = "itemImage";
     var img = document.createElement("img");
     img.src = "resources/images/"+item["Foto"];
-	  img.style.width="80%";
 	imgDiv.appendChild(img);  
     wrapper.appendChild(imgDiv);
   }
