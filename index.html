@@ -145,9 +145,12 @@ function open(item){
     }
   }
   if(item["Foto"]){
+	  var imgDiv = document.createElement("div");
     var img = document.createElement("img");
     img.src = "resources/images/"+item["Foto"];
-    wrapper.appendChild(img);
+	  img.style.width="80%";
+	imgDiv.appendChild(img);  
+    wrapper.appendChild(imgDiv);
   }
   wrapper.id = "DISPLAY";
   document.getElementById("main").appendChild(wrapper);
