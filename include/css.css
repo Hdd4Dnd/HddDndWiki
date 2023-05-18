@@ -95,7 +95,7 @@ body {
     margin: auto;
 }
 
-.navButton div{
+.navButton{
     position: absolute;
     background: none;
     border: none;
