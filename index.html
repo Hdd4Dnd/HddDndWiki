@@ -68,7 +68,7 @@
 </div>
 
 <div id="main" class="main">
-	<div class="title">
+	<div id="title" class="title">
 		<img src="include/logo.png" alt="logo">
 		<h1>HDD DnD</h1>
 		<h2>Dungeons and Dragons Wiki</h2>
@@ -107,6 +107,7 @@ function open(item){
   document.getElementById("npcs").style.display = "none";
   document.getElementById("magicItems").style.display = "none";
   document.getElementById("locations").style.display = "none";
+  document.getElementById("title").style.display = "none";
   showNavbar();
 
   var elem = document.getElementById("DISPLAY");
