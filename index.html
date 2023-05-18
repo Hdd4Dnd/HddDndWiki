@@ -146,7 +146,7 @@ function open(item){
   }
   if(item["Foto"]){
     var img = document.createElement("img");
-    img.src = item["Foto"];
+    img.src = "resources/images"+item["Foto"];
     wrapper.appendChild(img);
   }
   wrapper.id = "DISPLAY";
