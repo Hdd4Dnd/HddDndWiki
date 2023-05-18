@@ -104,3 +104,21 @@ body {
     right: 0;
     margin: 10px;
 }
+
+.title{
+    text-align:center;
+    margin-top: 50%;
+    font-family: system-ui;
+}
+
+.title img{
+    width:50%;
+    margin-bottom: -5%;
+}
+.title h1{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.title h1{
+    margin-top: 0;
+}
