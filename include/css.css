@@ -5,7 +5,7 @@ body {
   /* Fixed sidenav, full height */
   .sidenav {
     height: 100%;
-    width: 200px;
+    width: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -46,12 +46,11 @@ body {
   .dropdown-container {
     display: none;
     background-color: #262626;
-    padding-left: 8px;
   position: absolute;
   height: 100%;
   left: 200px;
   z-index: 100;
-  width: 200px;
+  width: 100%;
   top: 0px;
   }
   
@@ -66,3 +65,42 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+.itemImage{
+    text-align:center;
+}
+.itemImage img{
+    width: 80%;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: #000000 0px 0px 20px;
+}
+
+.menuButton{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #765447;
+    justify-content: space-around;
+    box-shadow: #000000 0px 0px 5px;
+    border-radius: 10px;
+}
+
+.menuButton div{
+    height: 10%;
+    width: 60%;
+    border-radius: 10px;
+    background-color: #000000;
+    margin: auto;
+}
+
+.navButton div{
+    position: absolute;
+    background: none;
+    border: none;
+    float: right;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
