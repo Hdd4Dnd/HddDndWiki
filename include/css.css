@@ -1,5 +1,5 @@
 body {
-    font-family: papyrus;
+    font-family: system-ui;
   }
   
   /* Fixed sidenav, full height */
@@ -23,11 +23,10 @@ body {
     display: block;
     border: none;
     background: none;
-    width: 100%;
     text-align: left;
     cursor: pointer;
     outline: none;
-      font-family:papyrus;
+      font-family:system-ui;
   }
   
   /* On mouse-over */
@@ -51,7 +50,7 @@ body {
   height: 100%;
   left: 0;
   z-index: 100;
-  width: 120%;
+  min-width: 100%;
   top: 0px;
   }
   
