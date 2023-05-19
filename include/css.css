@@ -10,7 +10,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #bfa58a;
     padding-top: 20px;
   }
   
@@ -19,7 +19,7 @@ body {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: black;
     display: block;
     border: none;
     background: none;
@@ -27,6 +27,7 @@ body {
     text-align: left;
     cursor: pointer;
     outline: none;
+      font-family:papyrus;
   }
   
   /* On mouse-over */
@@ -45,12 +46,12 @@ body {
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
   .dropdown-container {
     display: none;
-    background-color: #262626;
+    background-color: #e1cdb8;
   position: absolute;
   height: 100%;
-  left: 100%;
+  left: 0;
   z-index: 100;
-  width: 100%;
+  width: 120%;
   top: 0px;
   }
   
