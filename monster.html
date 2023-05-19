@@ -1,1 +1,159 @@
 
+<!DOCTYPE html>
+<html style="height: 100%;background-color: floralwhite;">
+<head>
+<script src="resources/magicItems.js"></script> 
+<script src="resources/locations.js"></script> 
+<script src="resources/npc.js"></script> 
+
+<link rel="stylesheet" href="include/css.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	<div>
+    		<button onclick="showNavbar()" class="navButton">
+			<div style="
+    width: 68%;
+    height: 64%;
+    position: absolute;
+    left: 17%;
+    border-radius: 30px;
+    top: 13%;
+    box-shadow: #e49700 0px 0px 20px;
+"></div>
+	    		<img src="include/logo.png" alt="logo" style="
+    width: 50px;
+    /* box-shadow: red 0px 0px 20px; */
+    /* border-radius: 35px; */
+">
+		</button>
+    	</div>  
+
+      
+<div class="sidenav" style="display:none" id="navbar">
+  <div>
+    <button class="dropdown-btn">Locations<i class="fa fa-caret-down"></i></button>
+    <div id="locations"class="dropdown-container ">
+      <script>
+        for(let i = 0; i<locations.length;i++){
+          var a = document.createElement("a");
+          a.innerHTML = locations[i].Name;
+          a.onclick = function () {open(locations[i]);};
+          document.getElementById("locations").appendChild(a);
+        }
+      </script>
+    </div>
+  </div>
+
+    <div>
+      <button class="dropdown-btn">Magic items<i class="fa fa-caret-down"></i></button>
+      <div id="magicItems"class="dropdown-container ">
+        <script>
+          for(let i = 0; i<magic_items.length;i++){
+            var a = document.createElement("a");
+            a.innerHTML = magic_items[i].Name;
+            a.onclick = function () {open(magic_items[i]);};
+            document.getElementById("magicItems").appendChild(a);
+          }
+        </script>
+      </div>
+    </div>
+
+    <div>
+      <button class="dropdown-btn">NPC<i class="fa fa-caret-down"></i></button>
+      <div id="npcs"class="dropdown-container ">
+        <script>
+          for(let i = 0; i<npcs.length;i++){
+            var a = document.createElement("a");
+            a.innerHTML = npcs[i].Name;
+            a.onclick = function () {open(npcs[i]);};
+            document.getElementById("npcs").appendChild(a);
+          }
+        </script>
+      </div>
+    </div>
+
+</div>
+
+<div id="main" class="main">
+	<div id="title" class="title">
+		<h1>Monsters</h1>
+	</div>
+</div>
+
+<script>
+        function showNavbar(){
+          var nav = document.getElementById("navbar");
+          if(nav.style.display == "none"){
+            nav.style.display = "block";
+          }else{
+            nav.style.display = "none";
+          }
+        }	
+	
+	
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+
+function open(item){
+  document.getElementById("npcs").style.display = "none";
+  document.getElementById("magicItems").style.display = "none";
+  document.getElementById("locations").style.display = "none";
+  document.getElementById("title").style.display = "none";
+  showNavbar();
+
+  var elem = document.getElementById("DISPLAY");
+  if(elem){
+    elem.remove();
+  }
+  var wrapper = document.createElement("div");
+
+  var propValue;
+  for(var propName in item){
+    if(propName!="Foto"){
+      propValue = item[propName];
+      console.log(propValue,propName);
+      
+      var element = document.createElement("div");
+	    if(propName != "Description"){
+		element.innerHTML = "<b>"+propName+" : </b>"+ propValue;
+		element.style.margin = "10px";
+	    }else{
+		element.innerHTML = "<b>"+propName+" : </b><br>"+ propValue;
+		element.style.textAlign = "justify";
+	    }
+      wrapper.appendChild(element);
+    }
+  }
+  if(item["Foto"]){
+	  var imgDiv = document.createElement("div");
+	  imgDiv.className = "itemImage";
+    var img = document.createElement("img");
+    img.src = "resources/images/"+item["Foto"];
+	imgDiv.appendChild(img);  
+    wrapper.appendChild(imgDiv);
+  }
+  wrapper.id = "DISPLAY";
+  document.getElementById("main").appendChild(wrapper);
+}
+
+</script>
+
+</body>
+</html> 
