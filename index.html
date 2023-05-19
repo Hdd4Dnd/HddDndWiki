@@ -132,7 +132,7 @@ function open(item){
       console.log(propValue,propName);
       
       var element = document.createElement("div");
-	    if(propName == "Description"){
+	    if(propName != "Description"){
 		element.innerHTML = "<b>"+propName+" : </b>"+ propValue;
 		element.style.margin = "10px";
 	    }else{
