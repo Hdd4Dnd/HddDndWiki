@@ -132,7 +132,13 @@ function open(item){
       console.log(propValue,propName);
       
       var element = document.createElement("div");
-      element.innerHTML = "<b>"+propName+" : </b>"+ propValue;
+	    if(propName == "Description"){
+		element.innerHTML = "<b>"+propName+" : </b>"+ propValue;
+		element.style.margin: "10px";
+	    }else{
+		element.innerHTML = "<b>"+propName+" : </b><br>"+ propValue;
+		element.style.textAlign = "justify";
+	    }
       wrapper.appendChild(element);
     }
   }
